@@ -1,5 +1,5 @@
 # TwitchPlaysAComputer-AHK
-an AutoHotKey-based script to provide a Twitch Chat access to a Windows install
+an AutoHotKey-based script to provide a Twitch Chat access to a Windows install!
 you can see this script in action at [MangoDestructoid](https://twitch.tv/mangodestructoid) on twitch 😊
 - [AutoHotKey v1.1+](https://github.com/Lexikos/AutoHotkey_L/releases) required
 
