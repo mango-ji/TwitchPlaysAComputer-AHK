@@ -1,11 +1,10 @@
-#Include Socket.ahk ; Include the Socket library
-#Include MyRC.ahk ; Include the IRC library
+#Include Socket.ahk
+#Include MyRC.ahk
 #SingleInstance Force
-MyBot := new IRCBot() ; Create a new instance of your bot
-MyBot.Connect("irc.chat.twitch.tv", 6667, "mangodestructoid", "mangodestructoid", "mangodestructoid", "OAUTHSECRET") ; Connect to an IRC server
-MyBot.SendJOIN("#mangodestructoid") ; Join a channel
+MyBot := new IRCBot()
+MyBot.Connect("irc.chat.twitch.tv", 6667, "mangodestructoid", "mangodestructoid", "mangodestructoid", "OAUTHSECRET")
+MyBot.SendJOIN("#mangodestructoid")
 return
-; Create a bot that extends the IRC library
 class IRCBot extends IRC
 {
 	onPRIVMSG(Nick,User,Host,Cmd,Params,Msg,Data)
@@ -80,8 +79,6 @@ class IRCBot extends IRC
 			{
 				Click, middle
 			}
-			
-			
 			else if (Msg = "arrow down")
 			{
 				Send, {down}
@@ -610,6 +607,4 @@ class IRCBot extends IRC
 				Send, {ctrl down}{z}{ctrl up}
 			}
 	}
-	
-	
 }
