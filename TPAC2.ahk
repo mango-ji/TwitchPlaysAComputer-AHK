@@ -121,35 +121,35 @@ class IRCBot extends IRC
 			}
 			else if (Msg = "backspace 2")
 			{
-				Send, {Backspace}{Backspace}
+				Send, {Backspace 2}
 			}
 			else if (Msg = "backspace 3")
 			{
-				Send, {Backspace}{Backspace}{Backspace}
+				Send, {Backspace 3}
 			}
 			else if (Msg = "backspace 4")
 			{
-				Send, {Backspace}{Backspace}{Backspace}{Backspace}
+				Send, {Backspace 4}
 			}
 			else if (Msg = "backspace 5")
 			{
-				Send, {Backspace}{Backspace}{Backspace}{Backspace}{Backspace}
+				Send, {Backspace 5}
 			}
 			else if (Msg = "backspace 6")
 			{
-				Send, {Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}
+				Send, {Backspace 6}
 			}
 			else if (Msg = "backspace 7")
 			{
-				Send, {Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}
+				Send, {Backspace 7}
 			}
 			else if (Msg = "backspace 8")
 			{
-				Send, {Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}
+				Send, {Backspace 8}
 			}
 			else if (Msg = "backspace 9")
 			{
-				Send, {Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}
+				Send, {Backspace 9}
 			}
 			else if (Msg = "delete")
 			{
@@ -406,8 +406,9 @@ class IRCBot extends IRC
 			else if Msg contains type
 			{
 				desiredMessage := SubStr(Msg, 6)
-				Send, %desiredMessage%
+				SendRaw, %desiredMessage%
 			}
+
 			else if (Msg = "enhance")
 			{
 				Send, {ctrl down}{wheelup}{ctrl up}
@@ -417,6 +418,10 @@ class IRCBot extends IRC
 				Send, {ctrl down}{wheeldown}{ctrl up}
 			}
 			else if (Msg = "where?")
+			{
+				Send, {ctrl}
+			}
+			else if (Msg = "where")
 			{
 				Send, {ctrl}
 			}
@@ -443,133 +448,72 @@ class IRCBot extends IRC
 			else if (Msg = "alt tab")
 			{
 				Send, {alt down}
+				sleep, 100
 				send, {tab}
+				sleep, 100
 				send, {alt up}
 			}
 			else if (Msg = "alt 2 tab")
 			{
 				Send, {alt down}
-				send, {tab}
+				sleep, 100
+				send, {tab 2}
 				Sleep, 100
-				send, {tab}
 				send, {alt up}
 			}
 			else if (Msg = "alt 3 tab")
 			{
 				Send, {alt down}
-				send, {tab}
 				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
+				send, {tab 3}
 				Sleep, 100
 				send, {alt up}
 			}
 			else if (Msg = "alt 4 tab")
 			{
 				Send, {alt down}
-				send, {tab}
 				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
+				send, {tab 4}
 				Sleep, 100
 				send, {alt up}
 			}
 			else if (Msg = "alt 5 tab")
 			{
 				Send, {alt down}
-				send, {tab}
 				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
+				send, {tab 5}
 				Sleep, 100
 				send, {alt up}
 			}
 			else if (Msg = "alt 6 tab")
 			{
 				Send, {alt down}
-				send, {tab}
 				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
+				send, {tab 6}
 				Sleep, 100
 				send, {alt up}
 			}
 			else if (Msg = "alt 7 tab")
 			{
 				Send, {alt down}
-				send, {tab}
 				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
+				send, {tab 7}
 				Sleep, 100
 				send, {alt up}
 			}
 			else if (Msg = "alt 8 tab")
 			{
 				Send, {alt down}
-				send, {tab}
 				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
+				send, {tab 8}
 				Sleep, 100
 				send, {alt up}
 			}
 			else if (Msg = "alt 9 tab")
 			{
 				Send, {alt down}
-				send, {tab}
 				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
-				Sleep, 100
-				send, {tab}
+				send, {tab 9}
 				Sleep, 100
 				send, {alt up}
 			}
@@ -597,32 +541,32 @@ class IRCBot extends IRC
 				Sleep, 10000
 				Send {click up}
 			}
-			else if (Msg = "its stuck")
+			else if (Msg = "go to center")
 			{
 				MouseMove, 640, 360
 			}
 			else if (Msg = "drag mouse up")
 			{
 				Send, {click down}
-				MouseMove, 0, -100, 1, Relative
+				MouseMove, 0, -100, 10, Relative
 				Send, {click up}
 			}
 			else if (Msg = "drag mouse down")
 			{
 				Send, {click down}
-				MouseMove, 0, 100, 1, Relative
+				MouseMove, 0, 100, 10, Relative
 				Send, {click up}
 			}
 			else if (Msg = "drag mouse left")
 			{
 				Send, {click down}
-				MouseMove, -100, 0, 1, Relative
+				MouseMove, -100, 0, 10, Relative
 				Send, {click up}
 			}
 			else if (Msg = "drag mouse right")
 			{
 				Send, {click down}
-				MouseMove, 100, 0, 1, Relative
+				MouseMove, 100, 0, 10, Relative
 				Send, {click up}
 			}
 			else if (Msg = "quit")
